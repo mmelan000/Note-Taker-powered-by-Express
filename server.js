@@ -9,7 +9,6 @@ const app = express();
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', api);
 
 app.use(express.static('public'));
 // GET Route for notes page
@@ -22,7 +21,7 @@ app.get('/api/notes', (req, res) => {
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 // POST Route for adding new notes.
-tips.post('/api/notes', (req, res) => {
+app.post('/api/notes', (req, res) => {
   console.info(`${req.method} request received to add a note`);
   console.log(req.body);
 
