@@ -27,7 +27,7 @@ const readAndDelete = (content, file) => {
         console.error(err);
       } else {
         const parsedData = JSON.parse(data);
-        const noteIndex = parsedData.findIndex(content)
+        const noteIndex = parsedData.findIndex(object => object.id === content);
         parsedData.splice(noteIndex, 1);
         writeToFile(file, parsedData);
       }
