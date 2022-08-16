@@ -1,6 +1,12 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title": "Test Title",
+        "text": "Test Text",
+        "id": "Test ID"
+    },
+    {
+        "title": "wow",
+        "text": "bam\n",
+        "id": "611a4c90-361e-47a3-8e6d-71aba4005f97"
     }
 ]
