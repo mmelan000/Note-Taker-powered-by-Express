@@ -45,7 +45,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## Usage  
 
-**[Sample of deployed Application on Heroku](heroku_placeholder)**
+**[Sample of deployed Application on Heroku](https://notetaker-powered-by-expressjs.herokuapp.com/)**
 
 ![App Screenshot](./assets/images/SS1.png) 
 
