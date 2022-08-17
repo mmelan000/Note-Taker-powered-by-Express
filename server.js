@@ -48,6 +48,10 @@ app.delete('/api/notes/:id', (req, res) => {
     res.error('Error in deleting note.');
   }
 });
+// WILDCARD route that directs back to index.html
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, './public/index.html'))
+);
 // PORT listener
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
