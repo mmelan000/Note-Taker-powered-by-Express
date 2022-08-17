@@ -2,15 +2,12 @@ const express = require('express');
 const path = require('path');
 const { readFromFile, writeToFile, readAndAppend, readAndDelete } = require('./helpers/fsutil')
 const { v4: uuidv4 } = require('uuid');
-
-const PORT = process.env.PORT || 3001;
-
+const PORT = process.env.PORT || 3001
 const app = express();
-
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+// Public access
 app.use(express.static('public'));
 // GET Route for notes page
 app.get('/notes', (req, res) =>
@@ -23,8 +20,7 @@ app.get('/api/notes', (req, res) => {
 });
 // POST Route for adding new notes.
 app.post('/api/notes', (req, res) => {
-  console.info(`${req.method} request received to add a note`);
-  console.log(req.body);
+  console.info(`${req.method} request received to add a note to database.`);
 
   const { title, text } = req.body;
 
@@ -36,25 +32,23 @@ app.post('/api/notes', (req, res) => {
     };
 
     readAndAppend(newNote, './db/db.json');
-    res.json(`Note added successfully`);
+    res.json(`Note added successfully.`);
   } else {
-    res.error('Error in adding note');
+    res.error('Error in adding note.');
   }
 });
-
 // DELETE Route for adding new notes.
 app.delete('/api/notes/:id', (req, res) => {
   console.info(`${req.method} request received to delete a note`);
-  console.log(req.params.id);
 
   if (req.params.id) {
     readAndDelete(req.params.id, './db/db.json');
-    res.json(`Note deleted successfully`);
+    res.json(`Note deleted successfully.`);
   } else {
-    res.error('Error in deleting note');
+    res.error('Error in deleting note.');
   }
 });
-
+// PORT listener
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
