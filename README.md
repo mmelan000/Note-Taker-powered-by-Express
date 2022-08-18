@@ -64,7 +64,7 @@ Deleting a note should remove an object from the array in ```./db/db.json``` bas
 
 ## Questions  
 
-If you have any questions, please reach out to me either ong Github or by Email.
+If you have any questions, please reach out to me either on Github or by Email.
   - **Github:** [mmelan000](https://github.com/mmelan000)
   - **Email:** [m.melanson000@gmail.com](mailto:m.melanson000@gmail.com)
 
